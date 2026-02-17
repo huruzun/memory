@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>怀念外婆</title>
+    <meta name="description" content="用照片与回忆，追思外婆。" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div class="hero__content">
+          <h1 class="hero__title">怀念外婆</h1>
+          <p class="hero__subtitle">用照片与回忆，追思一生的温柔与坚韧。</p>
+          <section class="memory">
+            <h2 class="memory__title">想对外婆说的话</h2>
+            <p class="memory__text">
+              外婆，谢谢你把平凡的日子过得有光。你的笑、你的叮嘱、你的手心温度，都在我心里。
+              我会带着你的爱继续生活，把想念藏进每一次努力里。
+            </p>
+          </section>
+          <div class="hero__meta">
+            <div class="meta">
+              <div class="meta__label">相册</div>
+              <div class="meta__value" id="photoCount">—</div>
+            </div>
+            <div class="meta">
+              <div class="meta__label">最后更新</div>
+              <div class="meta__value" id="lastUpdated">—</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="gallerySection" aria-label="照片画廊">
+        <div class="galleryHeader">
+          <h2 class="galleryHeader__title">照片</h2>
+          <p class="galleryHeader__hint">点击照片可放大查看</p>
+        </div>
+        <div id="gallery" class="gallery" role="list"></div>
+        <div id="emptyState" class="emptyState" hidden>
+          <h3 class="emptyState__title">还没有照片</h3>
+          <p class="emptyState__text">
+            把照片放到 <span class="pill">photos/</span> 目录，然后运行同步脚本生成
+            <span class="pill">gallery.json</span>，页面就会自动展示。
+          </p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__line">愿思念有处安放，愿回忆永远清晰。</div>
+      </footer>
+    </main>
+
+    <dialog class="lightbox" id="lightbox" aria-label="查看照片">
+      <button class="lightbox__close" id="lightboxClose" type="button" aria-label="关闭">×</button>
+      <figure class="lightbox__figure">
+        <img class="lightbox__image" id="lightboxImg" alt="" />
+        <figcaption class="lightbox__caption" id="lightboxCaption"></figcaption>
+      </figure>
+    </dialog>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
